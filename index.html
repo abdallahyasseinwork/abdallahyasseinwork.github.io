@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script charset="utf-8" src="https://js.pusher.com/7.0/pusher.min.js"></script>
+
+  
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="تبحث الآن عن وظيفة مناسبة لك ولا تجدها ؟ مهن بلس يوفر لك الان كافة الوظائف المختلفة في مختلف المجالات المتنوعة لتحصل على وظيفتك بأسرع وقت | املأ بياناتك فورا للتعيين">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Mhn Plus">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>مهن بلس لتوفير كافة الوظائف المطلوبة | قدم الان على الوظيفة التى تناسبك</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    var serviceWorkerVersion = '1041600351';
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+
+      <script type="text/javascript">
+        window.flutterWebRenderer = "html";
+    </script>
+
+
+
+    <style>
+
+      body {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex; /* Default Axis is X*/
+        justify-content: center; /* Main Axis */
+        align-items: center; /* Cross Axis */
+        background-color:#7A41C3 ;
+      }
+      .indicator{
+        
+        width: 3.5vw;
+        height: 3.5vw;
+      }
+</style>
+
+</head>
+<body style="overflow: hidden">
+
+  <div id="loading_indicator" class="container">
+    <img class="indicator" src="./assets/last_loader.gif" />
+  </div>
+
+
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+
+    //  navigator.serviceWorker.register('/firebase-messaging-sw.js');
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        }
+      }).then(function(engineInitializer) {
+        return engineInitializer.initializeEngine();
+      }).then(function(appRunner) {
+        return appRunner.runApp();
+      });
+    });
+
+    window.onload = function () {
+        setTimeout(function () {
+          var loadingIndicator =  document.getElementById("loading_indicator");
+          if (loadingIndicator) {
+            loadingIndicator.remove();
+          }
+        }, 10000);
+        };
+  
+
+</script>
+
+ <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+// <script type="module">
+//   // Import the functions you need from the SDKs you need
+//   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+
+//   // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
+//   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
+//   // TODO: Add SDKs for Firebase products that you want to use
+//   // https://firebase.google.com/docs/web/setup#available-libraries
+
+//   // Your web app's Firebase configuration
+//   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//   const firebaseConfig = {
+//     apiKey: "AIzaSyA1FPaY7hWxiLClH3Ci-MzqutHM9wBj9xU",
+//     authDomain: "mehan-elryad.firebaseapp.com",
+//     projectId: "mehan-elryad",
+//     storageBucket: "mehan-elryad.appspot.com",
+//     messagingSenderId: "205727913858",
+//     appId: "1:205727913858:web:39253461f1c6e77719e19b",
+//     measurementId: "G-Z3W5WBW0YT"
+//   };
+
+
+
+//   // Initialize Firebase
+//   const app = initializeApp(firebaseConfig); -->
+
+  <!-- const messaging = firebase.messaging();
+
+//  Optional:
+// messaging.onBackgroundMessage((message) => {
+//    console.log("onBackgroundMessage", message);
+//  });
+
+//  const analytics = getAnalytics(app); -->
+ <!-- </script> -->
+
+
+</body>
+</html>
